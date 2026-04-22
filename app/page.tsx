@@ -317,7 +317,7 @@ export default function HomePage() {
             className="text-[#4b4b4b] text-sm"
             style={{ fontFamily: "'Archivo', sans-serif" }}
           >
-            Questions? Contact us: support@inpost.co.uk
+            Questions? Contact us: support@inpost-sandbox.example.com
           </p>
         </div>
       </section>
