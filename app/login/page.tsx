@@ -43,7 +43,7 @@ export default function LoginPage() {
   const onSubmit = async (data: LoginFormData) => {
     const success = await login(data.email, data.password)
     if (success) {
-      router.push('/')
+      router.push('/profile')
     } else {
       setError('root', { message: 'Login failed. Please try again.' })
     }
