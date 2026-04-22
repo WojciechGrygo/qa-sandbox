@@ -1,0 +1,42 @@
+image: node:20-alpine
+
+stages:
+  - deploy
+
+# Cache node_modules between runs
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+    - .pnpm-store/
+
+deploy_production:
+  stage: deploy
+  only:
+    - main
+  before_script:
+    - npm install -g pnpm
+    - npm install -g vercel
+  script:
+    - pnpm install --frozen-lockfile
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+  environment:
+    name: production
+    url: $VERCEL_URL
+
+deploy_preview:
+  stage: deploy
+  except:
+    - main
+  before_script:
+    - npm install -g pnpm
+    - npm install -g vercel
+  script:
+    - pnpm install --frozen-lockfile
+    - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --token=$VERCEL_TOKEN
+  environment:
+    name: preview
