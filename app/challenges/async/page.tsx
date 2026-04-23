@@ -123,7 +123,7 @@ export default function AsyncChallengePage() {
             className="max-w-xl text-base text-[#1d1d1d]/80"
             style={{ fontFamily: "'Archivo', sans-serif" }}
           >
-            Enter a parcel number below and click Track parcel.
+            Enter a parcel number below and click Track Parcel. Write a stable test that handles the system&apos;s initialisation time correctly.
           </p>
         </div>
       </section>
