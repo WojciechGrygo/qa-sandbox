@@ -1035,7 +1035,7 @@ export default function ApiTestingPage() {
   return (
     <div className="min-h-screen bg-[#F6F6F6]">
       <section className="bg-[#FFCC05] px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
           <p
             className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#1d1d1d]/60"
             style={{ fontFamily: "'Archivo', sans-serif" }}
@@ -1059,7 +1059,7 @@ export default function ApiTestingPage() {
         </div>
       </section>
 
-      <section className="px-4 pt-6 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
           <div className="mb-6 flex w-fit gap-1 rounded-lg border border-gray-200 bg-white p-1">
             {(['docs', 'ui'] as const).map(t => (
