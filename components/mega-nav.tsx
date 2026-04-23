@@ -40,11 +40,31 @@ function InPostLogo({ className }: { className?: string }) {
         fillRule="evenodd"
         d="M95.37,133.3s-7.82,3.03-17.47,3.03-17.47-3.03-17.47-3.03c0,0,7.82-3.03,17.47-3.03s17.47,3.03,17.47,3.03Z"
       />
-      <path fill="#fefefe" fillRule="evenodd" d="M119.52,88.77s-6.93-4.68-12.33-12.53c-5.39-7.86-7.21-15.92-7.21-15.92,0,0,6.93,4.67,12.33,12.53,5.4,7.86,7.21,15.92,7.21,15.92Z" />
-      <path fill="#fefefe" fillRule="evenodd" d="M101.83,107.98s-8.35-.93-16.87-5.38c-8.52-4.45-13.98-10.73-13.98-10.73,0,0,8.35.93,16.87,5.38,8.52,4.45,13.98,10.73,13.98,10.73Z" />
-      <path fill="#fefefe" fillRule="evenodd" d="M119.52,177.67s-6.93,4.68-12.33,12.53c-5.39,7.85-7.21,15.92-7.21,15.92,0,0,6.93-4.67,12.33-12.53,5.4-7.85,7.21-15.92,7.21-15.92Z" />
-      <path fill="#fefefe" fillRule="evenodd" d="M101.83,158.46s-8.35.93-16.87,5.38c-8.52,4.45-13.98,10.73-13.98,10.73,0,0,8.35-.93,16.87-5.38s13.98-10.73,13.98-10.73Z" />
-      <path fill="#fefefe" fillRule="evenodd" d="M122.11,147.89h0c6.29,16.11,16.4,27.66,34.46,30.4-2.06.28-4.15.45-6.29.46-25.59.11-46.44-20.17-46.55-45.3-.11-25.13,20.54-45.6,46.13-45.71,2.28-.01,4.52.15,6.72.45-20.69,2.58-34.49,18.64-37.22,39.08-.87,12.46,13.64,16.67,13.64,16.67,0,0-5.94,3.88-10.89,3.96t0,0h0Z" />
+      <path
+        fill="#fefefe"
+        fillRule="evenodd"
+        d="M119.52,88.77s-6.93-4.68-12.33-12.53c-5.39-7.86-7.21-15.92-7.21-15.92,0,0,6.93,4.67,12.33,12.53,5.4,7.86,7.21,15.92,7.21,15.92Z"
+      />
+      <path
+        fill="#fefefe"
+        fillRule="evenodd"
+        d="M101.83,107.98s-8.35-.93-16.87-5.38c-8.52-4.45-13.98-10.73-13.98-10.73,0,0,8.35.93,16.87,5.38,8.52,4.45,13.98,10.73,13.98,10.73Z"
+      />
+      <path
+        fill="#fefefe"
+        fillRule="evenodd"
+        d="M119.52,177.67s-6.93,4.68-12.33,12.53c-5.39,7.85-7.21,15.92-7.21,15.92,0,0,6.93-4.67,12.33-12.53,5.4-7.85,7.21-15.92,7.21-15.92Z"
+      />
+      <path
+        fill="#fefefe"
+        fillRule="evenodd"
+        d="M101.83,158.46s-8.35.93-16.87,5.38c-8.52,4.45-13.98,10.73-13.98,10.73,0,0,8.35-.93,16.87-5.38s13.98-10.73,13.98-10.73Z"
+      />
+      <path
+        fill="#fefefe"
+        fillRule="evenodd"
+        d="M122.11,147.89h0c6.29,16.11,16.4,27.66,34.46,30.4-2.06.28-4.15.45-6.29.46-25.59.11-46.44-20.17-46.55-45.3-.11-25.13,20.54-45.6,46.13-45.71,2.28-.01,4.52.15,6.72.45-20.69,2.58-34.49,18.64-37.22,39.08-.87,12.46,13.64,16.67,13.64,16.67,0,0-5.94,3.88-10.89,3.96t0,0h0Z"
+      />
     </svg>
   )
 }
@@ -67,65 +87,142 @@ const navItems: NavItem[] = [
   {
     label: 'Your parcels',
     items: [
-      { label: 'Track a parcel', href: '#', description: 'Find out where your parcel is', icon: <Package className="h-4 w-4" /> },
-      { label: 'Send a parcel', href: '#', description: 'Drop off at any locker', icon: <Package className="h-4 w-4" /> },
-      { label: 'Returns', href: '#', description: 'Easy returns to top retailers', icon: <ArrowRight className="h-4 w-4" /> },
+      {
+        label: 'Track a parcel',
+        href: '#',
+        description: 'Find out where your parcel is',
+        icon: <Package className="h-6 w-6" />,
+      },
+      {
+        label: 'Send a parcel',
+        href: '#',
+        description: 'Drop off at any locker',
+        icon: <Package className="h-6 w-6" />,
+      },
+      {
+        label: 'Returns',
+        href: '#',
+        description: 'Easy returns to top retailers',
+        icon: <ArrowRight className="h-6 w-6" />,
+      },
     ],
   },
   {
     label: 'Lockers & shops',
     items: [
-      { label: 'Find a locker', href: '#', description: 'Thousands of locations near you', icon: <MapPin className="h-4 w-4" /> },
-      { label: 'Open a locker', href: '#', description: 'Collect or drop off 24/7', icon: <MapPin className="h-4 w-4" /> },
+      {
+        label: 'Find a locker',
+        href: '#',
+        description: 'Thousands of locations near you',
+        icon: <MapPin className="h-6 w-6" />,
+      },
+      {
+        label: 'Open a locker',
+        href: '#',
+        description: 'Collect or drop off 24/7',
+        icon: <MapPin className="h-6 w-6" />,
+      },
     ],
   },
   {
     label: 'Help',
     items: [
-      { label: 'FAQs', href: '#', description: 'Common questions answered', icon: <HelpCircle className="h-4 w-4" /> },
-      { label: 'Contact us', href: '#', description: 'Get in touch with our team', icon: <HelpCircle className="h-4 w-4" /> },
+      {
+        label: 'FAQs',
+        href: '#',
+        description: 'Common questions answered',
+        icon: <HelpCircle className="h-6 w-6" />,
+      },
+      {
+        label: 'Contact us',
+        href: '#',
+        description: 'Get in touch with our team',
+        icon: <HelpCircle className="h-6 w-6" />,
+      },
     ],
   },
-  {
-    label: 'Business',
-    items: [
-      { label: 'Business solutions', href: '#', description: 'Scale your deliveries', icon: <Building2 className="h-4 w-4" /> },
-      { label: 'Delivery for Enterprise', href: '#', description: 'High-volume shipping', icon: <Building2 className="h-4 w-4" /> },
-    ],
-  },
+  // {
+  //   label: 'Business',
+  //   items: [
+  //     {
+  //       label: 'Business solutions',
+  //       href: '#',
+  //       description: 'Scale your deliveries',
+  //       icon: <Building2 className="h-6 w-6" />,
+  //     },
+  //     {
+  //       label: 'Delivery for Enterprise',
+  //       href: '#',
+  //       description: 'High-volume shipping',
+  //       icon: <Building2 className="h-6 w-6" />,
+  //     },
+  //   ],
+  // },
 ]
 
 const challengeItems: DropdownItem[] = [
-  { label: 'Async Wait', href: '/challenges/async', description: 'API state & timing', icon: <Clock className="h-4 w-4" /> },
-  { label: 'Visual Testing', href: '/challenges/visual', description: 'Screenshots & data mocking', icon: <Eye className="h-4 w-4" /> },
-  { label: 'Accessibility', href: '/challenges/a11y', description: 'WCAG & screen readers', icon: <Accessibility className="h-4 w-4" /> },
-  { label: 'API Testing', href: '/challenges/api-testing', description: 'Response validation', icon: <Code2 className="h-4 w-4" /> },
+  {
+    label: 'Async Wait',
+    href: '/challenges/async',
+    description: 'API state & timing',
+    icon: <Clock className="h-6 w-6" />,
+  },
+  {
+    label: 'Visual Testing',
+    href: '/challenges/visual',
+    description: 'Screenshots & data mocking',
+    icon: <Eye className="h-6 w-6" />,
+  },
+  {
+    label: 'Accessibility',
+    href: '/challenges/a11y',
+    description: 'WCAG & screen readers',
+    icon: <Accessibility className="h-6 w-6" />,
+  },
+  {
+    label: 'API Testing',
+    href: '/challenges/api-testing',
+    description: 'Response validation',
+    icon: <Code2 className="h-6 w-6" />,
+  },
 ]
 
 // ─── Dropdown ────────────────────────────────────────────────────────────────
-function NavDropdown({ items, isOpen }: { items: DropdownItem[]; isOpen: boolean }) {
+function NavDropdown({
+  items,
+  isOpen,
+}: {
+  items: DropdownItem[]
+  isOpen: boolean
+}) {
   return (
     <div
-      className={`absolute top-full left-1/2 -translate-x-1/2 mt-0 w-64 bg-white shadow-xl border-t-2 border-[#1d1d1d] z-50 transition-all duration-150 ${
-        isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-1'
+      className={`absolute left-1/2 top-full z-50 mt-0 w-64 -translate-x-1/2 border-t-2 border-[#1d1d1d] bg-white shadow-xl transition-all duration-150 ${
+        isOpen
+          ? 'pointer-events-auto translate-y-0 opacity-100'
+          : 'pointer-events-none -translate-y-1 opacity-0'
       }`}
     >
       <div className="py-2">
-        {items.map((item) => (
+        {items.map(item => (
           <Link
             key={item.href + item.label}
             href={item.href}
-            className="flex items-start gap-3 px-5 py-3 hover:bg-[#F6F6F6] transition-colors group"
+            className="group flex items-start gap-3 px-5 py-3 transition-colors hover:bg-[#F6F6F6]"
           >
-            <span className="mt-0.5 text-[#1d1d1d] shrink-0">{item.icon}</span>
+            <span className="mt-0.5 shrink-0 text-[#1d1d1d]">{item.icon}</span>
             <div>
-              <p className="font-semibold text-[#1d1d1d] text-sm leading-tight"
-                 style={{ fontFamily: "'Archivo', sans-serif" }}>
+              <p
+                className="text-sm font-semibold leading-tight text-[#1d1d1d]"
+                style={{ fontFamily: "'Archivo', sans-serif" }}
+              >
                 {item.label}
               </p>
               {item.description && (
-                <p className="text-[#4b4b4b] text-xs mt-0.5 leading-tight"
-                   style={{ fontFamily: "'Archivo', sans-serif" }}>
+                <p
+                  className="mt-0.5 text-xs leading-tight text-[#4b4b4b]"
+                  style={{ fontFamily: "'Archivo', sans-serif" }}
+                >
                   {item.description}
                 </p>
               )}
@@ -161,36 +258,49 @@ export function MegaNav() {
   }, [])
 
   return (
-    <header className="bg-[#FFCC05] sticky top-0 z-40" ref={navRef}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-
+    <header className="sticky top-0 z-40 bg-[#FFCC05]" ref={navRef}>
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="flex h-24 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="shrink-0 flex items-center" aria-label="InPost Home">
-            <InPostLogo className="h-12 w-auto" />
+          <Link
+            href="/"
+            className="flex shrink-0 items-center"
+            aria-label="InPost Home"
+          >
+            <InPostLogo className="h-auto w-[108px]" />
           </Link>
 
           {/* Nav items */}
-          <nav className="hidden md:flex items-center gap-1 ml-8" aria-label="Main navigation">
-            {navItems.map((item) => (
+          <nav
+            className="ml-8 hidden items-center gap-1 md:flex"
+            aria-label="Main navigation"
+          >
+            {navItems.map(item => (
               <div key={item.label} className="relative">
                 <button
-                  className="flex items-center gap-1 px-3 py-2 text-[#1d1d1d] font-semibold text-sm hover:bg-black/10 rounded transition-colors"
+                  className="flex items-center gap-1 rounded px-3 py-2 text-[18px] font-semibold text-[#1d1d1d] transition-colors hover:bg-black/10"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                   onMouseEnter={() => setOpenMenu(item.label)}
                   onMouseLeave={() => setOpenMenu(null)}
-                  onClick={() => setOpenMenu(openMenu === item.label ? null : item.label)}
+                  onClick={() =>
+                    setOpenMenu(openMenu === item.label ? null : item.label)
+                  }
                   aria-expanded={openMenu === item.label}
                   aria-haspopup="true"
                 >
                   {item.label}
-                  <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === item.label ? 'rotate-180' : ''}`} />
+                  <ChevronDown
+                    className={`h-6 w-6 transition-transform ${openMenu === item.label ? 'rotate-180' : ''}`}
+                  />
                 </button>
                 <div
                   onMouseEnter={() => setOpenMenu(item.label)}
                   onMouseLeave={() => setOpenMenu(null)}
                 >
-                  <NavDropdown items={item.items} isOpen={openMenu === item.label} />
+                  <NavDropdown
+                    items={item.items}
+                    isOpen={openMenu === item.label}
+                  />
                 </div>
               </div>
             ))}
@@ -198,23 +308,30 @@ export function MegaNav() {
             {/* QA Challenges */}
             <div className="relative">
               <button
-                className="flex items-center gap-1 px-3 py-2 text-[#1d1d1d] font-semibold text-sm bg-black/10 hover:bg-black/20 rounded transition-colors border border-black/20"
+                className="flex items-center gap-1 rounded border border-black/20 bg-black/10 px-3 py-2 text-[18px] font-semibold text-[#1d1d1d] transition-colors hover:bg-black/20"
                 style={{ fontFamily: "'Archivo', sans-serif" }}
                 onMouseEnter={() => setOpenMenu('challenges')}
                 onMouseLeave={() => setOpenMenu(null)}
-                onClick={() => setOpenMenu(openMenu === 'challenges' ? null : 'challenges')}
+                onClick={() =>
+                  setOpenMenu(openMenu === 'challenges' ? null : 'challenges')
+                }
                 aria-expanded={openMenu === 'challenges'}
                 aria-haspopup="true"
               >
-                <Bug className="h-3.5 w-3.5" />
+                <Bug className="h-6 w-6" />
                 QA Challenges
-                <ChevronDown className={`h-3.5 w-3.5 transition-transform ${openMenu === 'challenges' ? 'rotate-180' : ''}`} />
+                <ChevronDown
+                  className={`h-6 w-6 transition-transform ${openMenu === 'challenges' ? 'rotate-180' : ''}`}
+                />
               </button>
               <div
                 onMouseEnter={() => setOpenMenu('challenges')}
                 onMouseLeave={() => setOpenMenu(null)}
               >
-                <NavDropdown items={challengeItems} isOpen={openMenu === 'challenges'} />
+                <NavDropdown
+                  items={challengeItems}
+                  isOpen={openMenu === 'challenges'}
+                />
               </div>
             </div>
           </nav>
@@ -225,18 +342,18 @@ export function MegaNav() {
               <>
                 <Link
                   href="/profile"
-                  className="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[#1d1d1d] hover:bg-black/10 px-3 py-2 rounded transition-colors"
+                  className="hidden items-center gap-1.5 rounded px-3 py-2 text-[18px] font-semibold text-[#1d1d1d] transition-colors hover:bg-black/10 sm:flex"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
-                  <User className="h-4 w-4" />
+                  <User className="h-6 w-6" />
                   {user.name}
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="hidden sm:flex items-center gap-1.5 text-sm font-semibold text-[#1d1d1d] hover:bg-black/10 px-3 py-2 rounded transition-colors"
+                  className="hidden items-center gap-1.5 rounded px-3 py-2 text-[18px] font-semibold text-[#1d1d1d] transition-colors hover:bg-black/10 sm:flex"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
-                  <LogOut className="h-4 w-4" />
+                  <LogOut className="h-6 w-6" />
                   Log out
                 </button>
               </>
@@ -244,7 +361,7 @@ export function MegaNav() {
               <Link href="/login">
                 <div
                   id="login-button"
-                  className="text-sm font-semibold text-[#1d1d1d] hover:bg-black/10 px-3 py-2 rounded transition-colors"
+                  className="rounded px-3 py-2 text-[18px] font-semibold text-[#1d1d1d] transition-colors hover:bg-black/10"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
                 >
                   Log in
@@ -255,11 +372,11 @@ export function MegaNav() {
             {/* BUG: links to /send-a-parcel which doesn't exist → 404 */}
             <Link
               href="/send-a-parcel"
-              className="flex items-center gap-2 border-2 border-[#1d1d1d] text-[#1d1d1d] font-bold text-sm px-4 py-2 rounded hover:bg-[#1d1d1d] hover:text-[#FFCC05] transition-colors"
+              className="flex items-center gap-2 rounded border-2 border-[#1d1d1d] px-4 py-2 text-[18px] font-bold text-[#1d1d1d] transition-colors hover:bg-[#1d1d1d] hover:text-[#FFCC05]"
               style={{ fontFamily: "'Archivo', sans-serif" }}
             >
               Send a parcel
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-6 w-6" />
             </Link>
           </div>
         </div>
