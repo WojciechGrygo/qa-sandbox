@@ -25,15 +25,10 @@ export default function AsyncChallengePage() {
   const [result, setResult] = useState<TrackingResult | null>(null)
   const [errorMessage, setErrorMessage] = useState('')
   const [systemStatus, setSystemStatus] = useState<SystemStatus>('initializing')
-  // Separate from UI state — actual backend readiness, resolved after 5s
   const systemReadyRef = useRef(false)
-  // BUG: no AbortController — rapid submits cause race condition
   const submitCountRef = useRef(0)
 
   useEffect(() => {
-    // BUG: UI shows "ready" after 3s but the backend isn't ready until 5s.
-    // A tester who waits for [data-testid="system-ready"] will submit too early.
-    // Correct pattern: waitForResponse('/api/parcel-ready'), not waitForSelector.
     const uiTimer = setTimeout(() => setSystemStatus('ready'), 3000)
 
     fetch('/api/parcel-ready')
@@ -61,8 +56,6 @@ export default function AsyncChallengePage() {
     submitCountRef.current += 1
     const currentSubmit = submitCountRef.current
 
-    // BUG: status is set to loading but button is NOT disabled
-    // so a second click fires a new request while the first is still pending
     setStatus('loading')
     setResult(null)
     setErrorMessage('')
@@ -74,8 +67,6 @@ export default function AsyncChallengePage() {
         body: JSON.stringify({ parcelNumber }),
       })
 
-      // BUG: stale closure — if user submits twice, both responses update state
-      // candidate must use waitForResponse and assert stable UI
       if (currentSubmit !== submitCountRef.current) return
 
       const data = await res.json()
@@ -144,7 +135,6 @@ export default function AsyncChallengePage() {
           >
             {systemStatus === 'initializing' ? (
               <>
-                {/* BUG: spinner has no aria-label */}
                 <Loader2 className="h-4 w-4 shrink-0 animate-spin" />
                 <span>Tracking system initialising&hellip;</span>
               </>
@@ -174,18 +164,15 @@ export default function AsyncChallengePage() {
                   placeholder="e.g. UK123456789GB"
                   className="w-full rounded border border-gray-300 px-4 py-3 text-sm text-[#1d1d1d] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#FFCC05]"
                   style={{ fontFamily: "'Archivo', sans-serif" }}
-                  // BUG: input is not disabled during loading — user can modify while waiting
                 />
               </div>
 
-              {/* BUG: button has no disabled state during loading or initializing */}
               <button
                 type="submit"
                 className="flex w-full items-center justify-center gap-2 rounded bg-[#FFCC05] px-6 py-3 font-bold text-[#1d1d1d] transition-colors hover:bg-[#e6b800]"
                 style={{ fontFamily: "'Archivo', sans-serif" }}
               >
                 {status === 'loading' ? (
-                  // BUG: spinner has no aria-label
                   <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-[#1d1d1d] border-t-transparent" />
                 ) : (
                   <>
@@ -197,7 +184,7 @@ export default function AsyncChallengePage() {
               </button>
             </form>
 
-            {/* Error state — BUG: no role="alert", screen reader won't announce */}
+            {/* Error state */}
             {status === 'error' && (
               <div className="mt-5 flex items-start gap-3 rounded border border-red-200 bg-red-50 p-4">
                 <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-red-500" />

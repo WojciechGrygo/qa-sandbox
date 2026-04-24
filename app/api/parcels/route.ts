@@ -50,7 +50,6 @@ export async function POST(req: NextRequest) {
   if (!recipientEmail || typeof recipientEmail !== 'string') {
     return NextResponse.json({ error: 'recipientEmail is required' }, { status: 400 })
   }
-  // BUG: only checks for "@" presence — "test@gmail" passes, no TLD validation
   const atIdx = (recipientEmail as string).indexOf('@')
   if (atIdx < 1 || atIdx === (recipientEmail as string).length - 1) {
     return NextResponse.json({ error: 'recipientEmail must be a valid email address' }, { status: 400 })
@@ -103,7 +102,7 @@ export async function POST(req: NextRequest) {
   return NextResponse.json(parcel, { status: 201 })
 }
 
-// DELETE /api/parcels — reset all (no auth — intentional, for test cleanup)
+// DELETE /api/parcels — reset all (no auth required)
 export async function DELETE() {
   resetAll()
   return NextResponse.json({ message: 'All parcels deleted' })

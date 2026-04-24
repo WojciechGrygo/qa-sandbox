@@ -40,7 +40,6 @@ export default function HomePage() {
 
           {/* Subtitle + postcode form */}
           <div className="flex w-full max-w-[820px] flex-col gap-4">
-            {/* BUG: "avalible" should be "available" */}
             <p
               className="text-center font-bold text-[#1d1d1d]"
               style={{ fontFamily: "'Archivo', sans-serif", fontSize: 20, lineHeight: '28px' }}
@@ -48,7 +47,7 @@ export default function HomePage() {
               Over 4,000 parcel lockers avalible across the UK, 24/7
             </p>
 
-            {/* Postcode search — BUG: /api/postcode always returns 500 */}
+            {/* Postcode search */}
             <div className="flex flex-col gap-2 w-full">
               <div className="flex w-full items-center overflow-hidden border-4 border-[#1d1d1d] bg-[#FEFEFE]">
                 <input
@@ -92,7 +91,6 @@ export default function HomePage() {
                   }
                 </button>
               </div>
-              {/* BUG: error has no role="alert" */}
               {postcodeError && (
                 <p
                   data-testid="postcode-error"
@@ -105,7 +103,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* After login: Browse Products → /products (BUG: 404 route) */}
+          {/* After login: Browse Products */}
           {user && (
             <div className="flex flex-col items-center gap-3">
               <p
@@ -145,7 +143,6 @@ export default function HomePage() {
               description: 'Send to any locker in the UK. Print a label at the locker or in the app.',
             },
           ].map((card) => (
-            // BUG: cursor-pointer but no onClick — visually interactive, does nothing
             <div
               key={card.title}
               className="flex cursor-pointer flex-col justify-end gap-4 bg-[#FEFEFE] p-6"
@@ -259,7 +256,6 @@ export default function HomePage() {
                       onClick={async () => {
                         const val = newsletterEmail.trim()
                         if (!val) { setNewsletterError('Please enter your email address'); return }
-                        // BUG: only checks for "@" — "wojtek@mail" passes, no TLD validation
                         const atIndex = val.indexOf('@')
                         if (atIndex < 1 || atIndex === val.length - 1) {
                           setNewsletterError('Please enter a valid email address')
@@ -278,7 +274,6 @@ export default function HomePage() {
                       }
                     </button>
                   </div>
-                  {/* BUG: error has no role="alert" — not announced to screen readers */}
                   {newsletterError && (
                     <p
                       data-testid="newsletter-error"
@@ -290,7 +285,6 @@ export default function HomePage() {
                 </div>
               )}
 
-              {/* BUG: text should be #FEFEFE (white) on blue bg — hardcoded #1d1d1d (black) */}
               <p
                 style={{
                   fontFamily: "'Archivo', sans-serif",
@@ -312,7 +306,6 @@ export default function HomePage() {
       {/* ── Contact ───────────────────────────────────────────────────────── */}
       <section className="pb-16 px-4 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-7xl text-center">
-          {/* BUG: plain text, not <a href="mailto:..."> */}
           <p
             className="text-[#4b4b4b] text-sm"
             style={{ fontFamily: "'Archivo', sans-serif" }}

@@ -476,7 +476,6 @@ export default function VisualChallengePage() {
                   className="flex flex-1 flex-col bg-[#FEFEFE]"
                   style={{ minWidth: 'min(420px, 100%)', minHeight: 320 }}
                 >
-                  {/* BUG: missing alt text on locker image */}
                   <img
                     src={locker.image_url}
                     className="h-full w-full object-cover"
@@ -512,7 +511,6 @@ export default function VisualChallengePage() {
                     >
                       {locker.trustpilot_score} out of 5
                     </p>
-                    {/* BUG: off-brand green — should be #00D46B, is #00B67A (Trustpilot green) */}
                     <p
                       className="text-xs text-[#4b4b4b]"
                       style={{ fontFamily: "'Archivo', sans-serif" }}

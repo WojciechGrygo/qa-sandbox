@@ -369,7 +369,6 @@ export function MegaNav() {
               </Link>
             )}
 
-            {/* BUG: links to /send-a-parcel which doesn't exist → 404 */}
             <Link
               href="/send-a-parcel"
               className="flex items-center gap-2 rounded border-2 border-[#1d1d1d] px-4 py-2 text-[18px] font-bold text-[#1d1d1d] transition-colors hover:bg-[#1d1d1d] hover:text-[#FFCC05]"

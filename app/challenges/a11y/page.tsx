@@ -80,7 +80,6 @@ export default function A11yChallengePage() {
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-xl space-y-6">
           {submitted ? (
-            // BUG: success state has no role="status" or aria-live — not announced to screen reader
             <div className="rounded-lg border border-gray-100 bg-white p-8 text-center shadow-sm">
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#FFCC05]">
                 <svg
@@ -108,9 +107,7 @@ export default function A11yChallengePage() {
             </div>
           ) : (
             <div className="rounded-lg border border-gray-100 bg-white p-8 shadow-sm">
-              {/* BUG HIGH: form has no aria-describedby or legend — screen reader has no context */}
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                {/* BUG HIGH: no <label> element — only placeholder, screen readers can't associate */}
                 <div>
                   <input
                     type="text"
@@ -123,8 +120,6 @@ export default function A11yChallengePage() {
                     aria-required="true"
                   />
                   {errors.fullName && (
-                    // BUG HIGH: error has no role="alert" and no aria-live — not announced
-                    // BUG MEDIUM: error text colour #f87171 on white bg = 3.0:1 contrast (fail AA for normal text)
                     <p
                       className="mt-1 text-xs"
                       style={{
@@ -218,7 +213,6 @@ export default function A11yChallengePage() {
                   )}
                 </div>
 
-                {/* BUG LOW: <select> has no visible label — only placeholder-like first option */}
                 <select
                   id="reason"
                   value={form.reason}
@@ -233,7 +227,6 @@ export default function A11yChallengePage() {
                   <option value="not_as_described">Not as described</option>
                 </select>
 
-                {/* BUG HIGH: submit is a <div> not a <button> — not keyboard-accessible, no Enter key support */}
                 <div
                   onClick={
                     handleSubmit as unknown as React.MouseEventHandler<HTMLDivElement>
@@ -247,8 +240,6 @@ export default function A11yChallengePage() {
                   Submit return
                 </div>
 
-                {/* BUG LOW: focus outline removed globally via CSS on this page's inputs would be caught by axe */}
-                {/* BUG LOW: no lang attr on <html> (handled at layout level but candidate should spot it if missing) */}
               </form>
             </div>
           )}
